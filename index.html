@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Phone Polar Alignment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Multi-Point Polar Align</h1>
+
+    <p class="intro">
+      Plate-solve 5–10 photos while rotating only the RA axis.
+      More points make the fitted axis more resistant to a bad solve
+      or slight phone movement.
+    </p>
+
+    <section class="settings">
+      <label>
+        Latitude
+        <input
+          id="lat"
+          type="number"
+          step="0.0001"
+          min="-90"
+          max="90"
+          placeholder="Example: 19.0760"
+        >
+      </label>
+
+      <label>
+        Longitude (east is +)
+        <input
+          id="lon"
+          type="number"
+          step="0.0001"
+          min="-180"
+          max="180"
+          placeholder="Example: 72.8777"
+        >
+      </label>
+
+      <label>
+        Hemisphere
+        <select id="hemisphere">
+          <option value="north">Northern</option>
+          <option value="south">Southern</option>
+        </select>
+      </label>
+
+      <button id="locate" type="button">
+        Use phone location
+      </button>
+    </section>
+
+    <section class="photo-upload" aria-labelledby="photos-heading">
+      <h2 id="photos-heading">Add sky photos</h2>
+      <div class="upload-actions">
+        <button id="phone-capture" class="phone-button" type="button">
+          Take or receive photo from phone
+        </button>
+        <button id="import-photo" class="import-button" type="button">
+          Import image from laptop or USB phone
+        </button>
+      </div>
+      <p class="upload-note">
+        On a phone, the first button opens its camera. On a laptop, use the
+        import button to select a photo copied from your phone.
+      </p>
+
+      <input
+        id="phone-photo"
+        type="file"
+        accept="image/*"
+        capture="environment"
+      >
+      <input id="photo" type="file" accept="image/*">
+    </section>
+
+    <section class="instructions">
+      <h2>Capture sequence</h2>
+
+      <ol>
+        <li>Attach the phone rigidly to the telescope or finder.</li>
+        <li>Focus the phone camera at infinity if possible.</li>
+        <li>Point near the meridian, roughly 45–70° high.</li>
+       <li>Take Photo 1.</li>
+<li>Rotate only RA by 15–30°.</li>
+<li>Take Photo 2.</li>
+<li>Rotate only RA another 15–30° in the same direction.</li>
+<li>Take Photo 3.</li>
+        <li>Do not touch Alt/Az bolts until the result appears.</li>
+      </ol>
+    </section>
+
+    <p id="status" role="status">
+      Enter your location, then take Photo 1.
+    </p>
+
+    <div id="shots"></div>
+
+    <section id="result" hidden></section>
+
+    <button id="finish" hidden type="button">
+      Calculate alignment
+    </button>
+
+    <button id="reset" hidden type="button">
+      Start over
+    </button>
+  </main>
+
+  <button id="support-toggle" class="support-toggle" type="button" aria-haspopup="dialog">
+    <span aria-hidden="true">♥</span> Support
+  </button>
+
+  <dialog id="support-dialog" class="support-dialog" aria-labelledby="support-title">
+    <button id="support-close" class="dialog-close" type="button" aria-label="Close support panel">×</button>
+    <h2 id="support-title">Support this project</h2>
+    <p>Scan this PhonePe QR code with any UPI app to send support.</p>
+    <img class="support-qr" src="support-qr.jpeg" alt="PhonePe UPI payment QR code">
+    <button id="add-amount" class="amount-button" type="button">Pay a custom amount</button>
+    <form id="amount-form" class="amount-form" hidden>
+      <label for="support-amount">Amount (₹)</label>
+      <input id="support-amount" type="number" min="1" step="1" inputmode="decimal" placeholder="Enter amount" required>
+      <button type="submit">Continue to UPI app</button>
+    </form>
+    <p id="payment-message" class="payment-message" role="status"></p>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

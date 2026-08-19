@@ -1,0 +1,297 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: #080d1b;
+  color: #e9efff;
+  font: 16px system-ui, sans-serif;
+}
+
+main {
+  max-width: 760px;
+  margin: auto;
+  padding: 24px;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+.intro {
+  line-height: 1.5;
+  color: #c2d0ef;
+}
+
+.settings {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px;
+  background: #111b32;
+  border-radius: 10px;
+}
+
+.settings label {
+  display: grid;
+  gap: 6px;
+  flex: 1;
+  min-width: 150px;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  border-radius: 7px;
+  font: inherit;
+}
+
+input,
+select {
+  color: white;
+  background: #0b1224;
+  border: 1px solid #62749c;
+}
+
+button {
+  color: white;
+  background: #5c82de;
+  border: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.12);
+}
+
+.instructions {
+  line-height: 1.6;
+}
+
+.photo-upload {
+  margin: 22px 0;
+  padding: 24px;
+  background: #111b32;
+  border-radius: 14px;
+}
+
+.photo-upload h2 {
+  margin: 0 0 20px;
+  font-size: 1.7rem;
+}
+
+.upload-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.upload-actions button {
+  min-height: 54px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.phone-button {
+  background: #10875f;
+}
+
+.import-button {
+  background: #4676db;
+}
+
+.upload-note {
+  margin: 15px 0 0;
+  color: #b8c8e9;
+  line-height: 1.45;
+}
+
+#phone-photo,
+#photo {
+  display: none;
+}
+
+#status {
+  padding: 12px;
+  border-radius: 8px;
+  background: #13203c;
+}
+
+.shot {
+  margin: 12px 0;
+  padding: 12px;
+  background: #111b32;
+  border-left: 4px solid #65d6a5;
+  border-radius: 8px;
+}
+
+.solved-image-frame {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #65d6a5;
+  border-radius: 8px;
+  background: black;
+}
+
+.solved-image-frame img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  background: black;
+}
+
+.solved-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 6px 9px;
+  border-radius: 5px;
+  background: rgba(0, 110, 65, 0.88);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.solved-info {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  color: #dce9ff;
+}
+
+.solved-info span {
+  color: #aac0e8;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 18px;
+  background: #152645;
+  border-radius: 10px;
+}
+
+.big {
+  margin: 8px 0 18px;
+  color: #8fe6c1;
+  font-size: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#finish,
+#reset {
+  margin-top: 16px;
+  margin-right: 10px;
+}
+
+.support-toggle {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  z-index: 5;
+  transform: translateY(-50%);
+  padding: 12px 16px;
+  border: 1px solid #ffc5dd;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ed5f97, #a84ed8);
+  box-shadow: 0 8px 22px rgba(167, 55, 135, 0.38);
+  font-weight: 750;
+}
+
+.support-toggle span {
+  margin-right: 4px;
+}
+
+.support-dialog {
+  width: min(360px, calc(100vw - 32px));
+  padding: 26px;
+  color: #e9efff;
+  background: #111b32;
+  border: 1px solid #3b527d;
+  border-radius: 18px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+  text-align: center;
+}
+
+.support-dialog::backdrop {
+  background: rgba(2, 5, 14, 0.72);
+}
+
+.support-dialog h2 {
+  margin: 0 28px 8px;
+}
+
+.support-dialog p {
+  color: #c2d0ef;
+  line-height: 1.45;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  background: #273957;
+  font-size: 1.5rem;
+}
+
+.support-qr {
+  display: block;
+  width: min(260px, 100%);
+  margin: 18px auto;
+  border-radius: 10px;
+  background: white;
+}
+
+.amount-button,
+.amount-form button {
+  background: #10875f;
+}
+
+.amount-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  text-align: left;
+}
+
+.amount-form input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.payment-message {
+  min-height: 1.4em;
+  margin-bottom: 0;
+  color: #ffd0df !important;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-toggle {
+    top: auto;
+    right: 16px;
+    bottom: 16px;
+    transform: none;
+  }
+}

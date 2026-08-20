@@ -290,10 +290,9 @@ app.post("/api/horizon", horizonRateLimit, (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-const host = "0.0.0.0";
 
-const server = app.listen(port, host, () => {
-  console.log(`Website started: http://${host}:${port}`);
+const server = app.listen(port, "0.0.0.0", () => {
+  console.log(`Website started on port ${port}`);
 });
 
 server.requestTimeout = 310000;

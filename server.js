@@ -311,5 +311,7 @@ app.use((error, req, res, next) => {
 
   next(error);
 });
-
+app.get('/', (req, res) => {
+  res.send('Backend API is running!');
+});
 
